@@ -6,4 +6,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
-//tasks.register<PrintString>("printBye"){}
+
+tasks.register<PrintString>("printString"){
+    str = "Im printing a string but from model"
+}

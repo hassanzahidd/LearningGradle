@@ -113,15 +113,6 @@ task("eagerTask") {
     println("eagerTask!")
 }
 
-abstract class PrintString: DefaultTask(){
-    @get:Input
-    abstract val str: Property<String>
-
-    @TaskAction
-    fun action(){
-        println(str.get())
-    }
-}
 
 tasks.register<PrintString>("printString"){
     str = "Im printing a string"
