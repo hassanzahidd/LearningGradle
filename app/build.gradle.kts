@@ -105,15 +105,21 @@ tasks.register("registerTask") {
     println("registerTask!")
 }
 
-tasks.create("createTask"){
-    println("createTask!")
-}
+// tasks.create("createTask"){
+//     println("createTask!")
+// }
 
-task("eagerTask") {
-    println("eagerTask!")
-}
+// task("eagerTask") {
+//     println("eagerTask!")
+// }
 
 
 tasks.register<PrintString>("printString"){
     str = "Im printing a string"
+}
+
+tasks.register<DirHash>("hashSrc") {
+    contents = layout.projectDirectory.dir("src")
+    hashMethod.set("MD5")
+    outputDir = layout.buildDirectory.dir("src-hash")
 }
